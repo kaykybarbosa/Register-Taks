@@ -5,6 +5,7 @@ import com.task.taskregister.services.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -28,5 +29,11 @@ public class TaskController {
         ModelAndView mv = new ModelAndView("list");
         mv.addObject("tasks", taskService.findAll());
         return mv;
+    }
+    @GetMapping("/edit/{id}")
+    public void edit(@PathVariable(value = "id") Long id){
+        ModelAndView mv = new ModelAndView("create");
+
+        //Task taskFind = taskService.findAllList().stream().filter(task -> task.getId().equals(id).;
     }
 }
