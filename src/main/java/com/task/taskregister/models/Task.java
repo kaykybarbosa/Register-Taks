@@ -9,6 +9,8 @@ import java.util.Date;
 @Entity
 @Table(name="TB_TASKS")
 public class Task {
+    private static final long serialVersionUID = 1L;
+
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
