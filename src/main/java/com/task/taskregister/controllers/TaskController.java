@@ -1,5 +1,6 @@
-package com.task.taskregister;
+package com.task.taskregister.controllers;
 
+import com.task.taskregister.models.Task;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -7,7 +8,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class TaskController {
 
     @GetMapping("/create")
-    public String create(){
+    public String home(){
         return "create";
+    }
+
+    public void crate(Task task){
+
     }
 }
