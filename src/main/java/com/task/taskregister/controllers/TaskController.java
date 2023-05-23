@@ -24,7 +24,6 @@ public class TaskController {
 
     @PostMapping("/create")
     public String create(Task task){
-        System.out.println(task);
         if (task.getId() != null){
             var taskModel = new Task();
 
