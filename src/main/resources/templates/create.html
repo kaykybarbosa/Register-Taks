@@ -9,7 +9,7 @@
     <link rel="icon" href="/css/image/task.png">
     <title>Cadastro De Tarefas</title>
   </head>
-  <body>
+  <body class="p-2">
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
         <a class="navbar-brand" href="/create">Cadastro</a>
@@ -35,7 +35,7 @@
 
       <div class="mb-3">
         <label class="form-label">Data de Execução</label>
-        <input type="text" class="form-control" name="date" th:value="${task.date}">
+        <input type="text" class="form-control" name="date" th:value="${{task.date}}">
       </div>
 
       <button type="submit" class="btn btn-primary">Cadastrar</button>

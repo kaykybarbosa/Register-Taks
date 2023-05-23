@@ -24,6 +24,7 @@ public class TaskController {
 
     @PostMapping("/create")
     public String create(Task task){
+        System.out.println(task);
         if (task.getId() != null){
             var taskModel = new Task();
 
@@ -48,14 +49,16 @@ public class TaskController {
         ModelAndView mv = new ModelAndView("create");
         Task taskFind = taskService.findAllList().stream().filter(task -> task.getId().equals(id)).findFirst().get();
 
+
         mv.addObject(taskFind);
         return mv;
     }
 
     @GetMapping("/delete/{id}")
-    public void delete(@PathVariable(value="id") Long id){
+    public String delete(@PathVariable(value="id") Long id){
         var taskDeleted = taskService.findById(id);
-
         taskService.delete(taskDeleted.get());
+
+        return "redirect:/list";
     }
 }
